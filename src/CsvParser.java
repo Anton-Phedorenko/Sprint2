@@ -7,13 +7,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CSV_Parser {
+public class CsvParser {
     private final String[] month = new String[]{"01", "02", "03"};
     private static HashMap<Integer, ArrayList<MonthlyReport>> map = new HashMap();
     private static List<YearlyReport> list = new ArrayList();
-
-    public CSV_Parser() {
-    }
 
     public static List<YearlyReport> getList() {
         return list;

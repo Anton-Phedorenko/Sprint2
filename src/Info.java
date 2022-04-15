@@ -3,8 +3,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Info {
-    private final List<YearlyReport> list = CSV_Parser.getList();
-    private final Map<Integer, ArrayList<MonthlyReport>> map = CSV_Parser.getMap();
+    private final List<YearlyReport> list = CsvParser.getList();
+    private final Map<Integer, ArrayList<MonthlyReport>> map = CsvParser.getMap();
     private Month[] m = Month.values();
 
     public void infoMonth() {

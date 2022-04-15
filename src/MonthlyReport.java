@@ -1,12 +1,12 @@
 public class MonthlyReport {
     private String item_name;
-    private boolean is_expense;
+    private boolean isExpense;
     private int quantity;
     private int sumOfOne;
 
-    public MonthlyReport(String item_name, boolean is_expense, int quantity, int sumOfOne) {
+    public MonthlyReport(String item_name, boolean isExpense, int quantity, int sumOfOne) {
         this.item_name = item_name;
-        this.is_expense = is_expense;
+        this.isExpense = isExpense;
         this.quantity = quantity;
         this.sumOfOne = sumOfOne;
     }
@@ -16,7 +16,7 @@ public class MonthlyReport {
     }
 
     public boolean isIs_expense() {
-        return is_expense;
+        return isExpense;
     }
 
     public int getQuantity() {
@@ -31,7 +31,7 @@ public class MonthlyReport {
     public String toString() {
         return "MonthlyReport{" +
                 "item_name='" + item_name + '\'' +
-                ", is_expense=" + is_expense +
+                ", is_expense=" + isExpense +
                 ", quantity=" + quantity +
                 ", sumOfOne=" + sumOfOne +
                 '}';

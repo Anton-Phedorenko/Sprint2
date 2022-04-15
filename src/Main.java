@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        CSV_Parser csv_parser = new CSV_Parser();
+        CsvParser csv_parser = new CsvParser();
         Info fileInfo = new Info();
         Scanner scanner = new Scanner(System.in);
         while (true) {
