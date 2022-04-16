@@ -1,11 +1,11 @@
 public class YearlyReport {
 private  int month;
-private boolean is_expense;
+private boolean isExpense;
 private int amount;
 
     public YearlyReport(int month, boolean is_expense, int amount) {
         this.month = month;
-        this.is_expense = is_expense;
+        this.isExpense = is_expense;
         this.amount = amount;
     }
 
@@ -13,8 +13,8 @@ private int amount;
         return month;
     }
 
-    public boolean isIs_expense() {
-        return is_expense;
+    public boolean isIsExpense() {
+        return isExpense;
     }
 
     public int getAmount() {
@@ -25,7 +25,7 @@ private int amount;
     public String toString() {
         return "YearlyReport{" +
                 "month=" + month +
-                ", is_expense=" + is_expense +
+                ", is_expense=" + isExpense +
                 ", amount=" + amount +
                 '}';
     }

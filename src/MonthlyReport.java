@@ -1,21 +1,21 @@
 public class MonthlyReport {
-    private String item_name;
+    private String itemName;
     private boolean isExpense;
     private int quantity;
     private int sumOfOne;
 
     public MonthlyReport(String item_name, boolean isExpense, int quantity, int sumOfOne) {
-        this.item_name = item_name;
+        this.itemName = item_name;
         this.isExpense = isExpense;
         this.quantity = quantity;
         this.sumOfOne = sumOfOne;
     }
 
-    public String getItem_name() {
-        return item_name;
+    public String getItemName() {
+        return itemName;
     }
 
-    public boolean isIs_expense() {
+    public boolean isIsExpense() {
         return isExpense;
     }
 
@@ -30,7 +30,7 @@ public class MonthlyReport {
     @Override
     public String toString() {
         return "MonthlyReport{" +
-                "item_name='" + item_name + '\'' +
+                "item_name='" + itemName + '\'' +
                 ", is_expense=" + isExpense +
                 ", quantity=" + quantity +
                 ", sumOfOne=" + sumOfOne +
