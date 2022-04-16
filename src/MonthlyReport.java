@@ -1,8 +1,8 @@
 public class MonthlyReport {
-    private String itemName;
-    private boolean isExpense;
-    private int quantity;
-    private int sumOfOne;
+    private final String itemName;
+    private final boolean isExpense;
+    private final int quantity;
+    private final int sumOfOne;
 
     public MonthlyReport(String item_name, boolean isExpense, int quantity, int sumOfOne) {
         this.itemName = item_name;

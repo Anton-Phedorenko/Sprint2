@@ -1,8 +1,7 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         CsvParser csv_parser = new CsvParser();
         Info fileInfo = new Info();
         Scanner scanner = new Scanner(System.in);

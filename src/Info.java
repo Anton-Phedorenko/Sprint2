@@ -7,6 +7,7 @@ public class Info {
     private final List<YearlyReport> yearlyReports = CsvParser.getList();
     private final Map<Integer, ArrayList<MonthlyReport>> mapMonthReport = CsvParser.getMap();
     private final Map<Integer, String> mapMonth = fillMap();
+
     private Map<Integer, String> fillMap() {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Январь");
@@ -23,6 +24,7 @@ public class Info {
         map.put(12, "Декабрь");
         return map;
     }
+
     public void infoMonth() {
         if (checkListAndMap()) {
             System.out.println("Файлы еще не считаны");
@@ -31,7 +33,7 @@ public class Info {
 
         String nameIncome = "";
         String nameBadIncome = "";
-        int monthIncome = 0;
+        int monthIncome ;
 
         for (Map.Entry<Integer, ArrayList<MonthlyReport>> e : mapMonthReport.entrySet()) {
             monthIncome = e.getKey();
@@ -55,8 +57,7 @@ public class Info {
     }
 
     public boolean checkListAndMap() {
-        if (yearlyReports.isEmpty() || mapMonthReport.isEmpty()) return true;
-        else return false;
+        return yearlyReports.isEmpty() || mapMonthReport.isEmpty();
     }
 
     public void infoYear() {
@@ -69,20 +70,18 @@ public class Info {
         int badIncome = 0;
         int badIncomeSum = 0;
         int count = 0;
-        for (int i = 0; i < yearlyReports.size(); i++) {
-            YearlyReport y = yearlyReports.get(i);
+        for (YearlyReport y : yearlyReports) {
             if (y.isIsExpense()) {
                 badIncome += y.getAmount();
                 badIncomeSum += y.getAmount();
-                count++;
             } else {
                 income += y.getAmount();
                 incomeSum += y.getAmount();
-                count++;
             }
+            count++;
             if (count == 2) {
                 count = 0;
-                System.out.println("Доход за месяц " + mapMonth.get(yearlyReports.get(i).getMonth()) + " " + (income - badIncome));
+                System.out.println("Доход за месяц " + mapMonth.get(y.getMonth()) + " " + (income - badIncome));
                 income = 0;
                 badIncome = 0;
             }
@@ -121,8 +120,7 @@ public class Info {
     private int getSumFromMonth(int i) {
         int sumIn = 0;
         int sumBad = 0;
-        for (int j = 0; j < yearlyReports.size(); j++) {
-            YearlyReport report = yearlyReports.get(j);
+        for (YearlyReport report : yearlyReports) {
             if (report.getMonth() == i && report.isIsExpense()) {
                 sumBad += report.getAmount();
             } else if (report.getMonth() == i && !report.isIsExpense()) {
