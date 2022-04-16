@@ -7,7 +7,6 @@ public class Info {
     private final List<YearlyReport> yearlyReports = CsvParser.getList();
     private final Map<Integer, ArrayList<MonthlyReport>> mapMonthReport = CsvParser.getMap();
     private final Map<Integer, String> mapMonth = fillMap();
-
     private Map<Integer, String> fillMap() {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Январь");
@@ -24,7 +23,6 @@ public class Info {
         map.put(12, "Декабрь");
         return map;
     }
-
     public void infoMonth() {
         if (checkListAndMap()) {
             System.out.println("Файлы еще не считаны");
@@ -66,7 +64,6 @@ public class Info {
             System.out.println("Файлы еще не считаны");
             return;
         }
-
         int income = 0;
         int incomeSum = 0;
         int badIncome = 0;
@@ -100,9 +97,7 @@ public class Info {
             return;
         }
         Info fileInfo = new Info();
-
         for (Map.Entry<Integer, ArrayList<MonthlyReport>> e : mapMonthReport.entrySet()) {
-
             int income = 0;
             int badIncome = 0;
             for (int i = 0; i < e.getValue().size(); i++) {
@@ -119,13 +114,11 @@ public class Info {
                 System.err.println("Ошибка в отчете за " + mapMonth.get(e.getKey()) + " месяц ");
                 return;
             }
-
         }
         System.out.println("Успешно");
     }
 
     private int getSumFromMonth(int i) {
-
         int sumIn = 0;
         int sumBad = 0;
         for (int j = 0; j < yearlyReports.size(); j++) {
@@ -136,7 +129,6 @@ public class Info {
                 sumIn += report.getAmount();
             }
         }
-
         return sumIn - sumBad;
     }
 

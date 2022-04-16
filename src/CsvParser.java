@@ -17,7 +17,6 @@ private  boolean readMonthFile=false;
     public static List<YearlyReport> getList() {
         return yearlyReports;
     }
-
     public void readFileYear() throws IOException {
         if(readYearFile){
             System.out.println("Годовой отчет уже считан");
@@ -32,18 +31,13 @@ private  boolean readMonthFile=false;
                 String[] array = s.split(",");
                 yearlyReports.add(new YearlyReport(Integer.parseInt(array[0]), Boolean.parseBoolean(array[2]), Integer.parseInt(array[1])));
             }
-
-
         } catch (IOException var6) {
             System.out.println("Не удалось считать годовой отчет");
         }
         finally {
             br.close();
         }
-readYearFile=true;
-
-
-
+        readYearFile=true;
     }
 
     public void readMonthFile() throws IOException {
@@ -63,11 +57,8 @@ readYearFile=true;
                 while((s = br.readLine()) != null) {
                     String[] array = s.split(",");
                     monthList.add(new MonthlyReport(array[0], Boolean.parseBoolean(array[1]), Integer.parseInt(array[2]), Integer.parseInt(array[3])));
-
                 }
                 mapMonthReport.put(Integer.parseInt(month[i]), monthList);
-
-
             } catch (IOException var8) {
                 System.out.println("Не удалось считать месячный отчет");
             }
