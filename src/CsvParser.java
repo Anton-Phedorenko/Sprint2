@@ -31,7 +31,7 @@ public class CsvParser {
             String s=br.readLine();
             while ((s = br.readLine()) != null) {
                 String[] array = s.split(",");
-                yearlyReports.add(new YearlyReport(Integer.parseInt(array[0]), Boolean.parseBoolean(array[2]), Integer.parseInt(array[1])));
+                yearlyReports.add(new YearlyReport(Integer.parseInt(array[0]), Integer.parseInt(array[1]), Boolean.parseBoolean(array[2])));
             }
         } catch (IOException var6) {
             System.out.println("Не удалось считать годовой отчет");

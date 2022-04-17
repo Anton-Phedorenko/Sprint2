@@ -1,12 +1,12 @@
 public class YearlyReport {
     private final int month;
-    private final boolean isExpense;
     private final int amount;
+    private final boolean isExpense;
 
-    public YearlyReport(int month, boolean isExpense, int amount) {
+    public YearlyReport(int month, int amount, boolean isExpense) {
         this.month = month;
-        this.isExpense = isExpense;
         this.amount = amount;
+        this.isExpense = isExpense;
     }
 
     public int getMonth() {
